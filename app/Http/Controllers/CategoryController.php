@@ -23,8 +23,8 @@ class CategoryController extends Controller
     {
         $data = $this->validate($request, [
             'parentId' => 'required|int',
-            'name' => 'required|max:255',
-            'description' => 'required|max:255'
+            'name' => 'required|max:255|string',
+            'description' => 'required|max:255|string'
         ]);
 
         if ((new Category($data))->save())
